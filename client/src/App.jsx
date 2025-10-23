@@ -11,7 +11,7 @@ function App() {
       <main className="app-main">
         <div className="welcome-card">
           <h2>Welcome to ReelVault</h2>
-          <p>Project initialized and ready for development.</p>
+          <p>Vite + React setup complete. Ready for development.</p>
         </div>
       </main>
     </div>
