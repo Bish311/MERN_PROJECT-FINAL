@@ -37,8 +37,6 @@ const userSchema = new mongoose.Schema(
   }
 );
 
-// Create indexes for username and email
-userSchema.index({ username: 1 });
-userSchema.index({ email: 1 });
+// Indexes are automatically created by unique: true on username and email
 
 module.exports = mongoose.model('User', userSchema);
