@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: reelvault-backend
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        fromDatabase:
+          name: reelvault-mongodb
+          property: connectionString
+      - key: JWT_SECRET
+        generateValue: true
+      - key: TMDB_API_KEY
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
+
+databases:
+  - name: reelvault-mongodb
+    databaseName: reelvault
+    user: reelvault_user
