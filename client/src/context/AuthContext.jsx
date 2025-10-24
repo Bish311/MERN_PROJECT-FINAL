@@ -16,7 +16,9 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // API base URL
-  const API_BASE_URL = 'http://127.0.0.1:5000/api';
+  const API_BASE_URL = process.env.NODE_ENV === 'production' 
+    ? 'https://reelvault-back.onrender.com/api'
+    : 'http://127.0.0.1:5000/api';
 
   // Helper function to make authenticated requests
   const makeRequest = async (url, options = {}) => {
