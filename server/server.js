@@ -9,10 +9,23 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://reelvault-main.netlify.app'
+];
+
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' 
-    ? (process.env.FRONTEND_URL || 'https://reelvault-main.netlify.app')
-    : 'http://localhost:3000',
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    if (allowedOrigins.indexOf(origin) !== -1) {
+      return callback(null, true);
+    } else {
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+  },
   credentials: true
 }));
 app.use(express.json());
@@ -20,6 +33,18 @@ app.use(express.json());
 // Test route (for debugging)
 app.get('/test', (req, res) => {
   res.send('✅ API is working!');
+});
+
+// Debug route to check environment variables
+app.get('/debug', (req, res) => {
+  res.json({
+    NODE_ENV: process.env.NODE_ENV,
+    FRONTEND_URL: process.env.FRONTEND_URL,
+    isProduction: process.env.NODE_ENV === 'production',
+    corsOrigin: process.env.NODE_ENV === 'production' 
+      ? (process.env.FRONTEND_URL || 'https://reelvault-main.netlify.app')
+      : 'http://localhost:3000'
+  });
 });
 
 // Root route
