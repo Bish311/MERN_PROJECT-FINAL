@@ -1,0 +1,44 @@
+<!-- Placeholder SVG for missing movie posters -->
+<svg width="300" height="450" viewBox="0 0 300 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d1b4e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a0a2e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="300" height="450" fill="url(#bg)"/>
+  
+  <!-- Film strip borders -->
+  <rect x="0" y="0" width="300" height="20" fill="#4a2c66"/>
+  <rect x="0" y="430" width="300" height="20" fill="#4a2c66"/>
+  
+  <!-- Film holes -->
+  <circle cx="30" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="60" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="90" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="120" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="150" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="180" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="210" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="240" cy="10" r="5" fill="#1a0a2e"/>
+  <circle cx="270" cy="10" r="5" fill="#1a0a2e"/>
+  
+  <circle cx="30" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="60" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="90" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="120" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="150" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="180" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="210" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="240" cy="440" r="5" fill="#1a0a2e"/>
+  <circle cx="270" cy="440" r="5" fill="#1a0a2e"/>
+  
+  <!-- Movie camera icon -->
+  <text x="150" y="200" font-family="Arial, sans-serif" font-size="60" fill="#ffd700" text-anchor="middle">🎬</text>
+  
+  <!-- Text -->
+  <text x="150" y="280" font-family="Georgia, serif" font-size="18" fill="#ffd700" text-anchor="middle">No Poster</text>
+  <text x="150" y="310" font-family="Georgia, serif" font-size="18" fill="#ffd700" text-anchor="middle">Available</text>
+</svg>

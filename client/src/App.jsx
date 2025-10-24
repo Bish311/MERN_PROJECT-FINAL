@@ -16,6 +16,8 @@ import NotFound from './pages/NotFound.jsx';
 // Import styles
 import './styles/theme.css';
 import './styles/App.css';
+import './styles/vintage.css';
+import './styles/components.css';
 
 // Public Route wrapper (redirects authenticated users)
 const PublicRoute = ({ children }) => {
