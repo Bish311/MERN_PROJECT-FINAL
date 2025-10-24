@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' 
+  baseURL: import.meta.env.PROD || window.location.hostname !== 'localhost'
     ? 'https://reelvault-back.onrender.com/api'
     : 'http://127.0.0.1:5000/api',
   headers: {

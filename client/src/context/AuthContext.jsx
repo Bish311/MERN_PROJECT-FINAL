@@ -16,7 +16,7 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   // API base URL
-  const API_BASE_URL = process.env.NODE_ENV === 'production' 
+  const API_BASE_URL = import.meta.env.PROD || window.location.hostname !== 'localhost'
     ? 'https://reelvault-back.onrender.com/api'
     : 'http://127.0.0.1:5000/api';
 
