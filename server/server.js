@@ -77,7 +77,7 @@ const startServer = async () => {
     app.use('/api/reviews', reviewRoutes);
     console.log('🔗 Review routes mounted at /api/reviews');
 
-    app.listen(PORT, '127.0.0.1', () => {
+    app.listen(PORT, '0.0.0.0', () => {
       console.log(`\n✅ Server running on http://127.0.0.1:${PORT}`);
       console.log(`🌐 Test endpoint: http://127.0.0.1:${PORT}/test`);
       console.log(`🔐 Auth endpoint: http://127.0.0.1:${PORT}/api/auth`);
