@@ -1,11 +1,4 @@
-:root {
-  --bg-primary: #1a0a2e;
-  --bg-secondary: #2d1b4e;
-  --accent: #8b5cf6;
-  --text-primary: #ffd700;
-  --text-secondary: #f4d03f;
-  --border: #4a2c66;
-}
+/* App.css - Using theme variables from theme.css */
 
 .App {
   min-height: 100vh;
@@ -17,11 +10,11 @@
   padding: 2rem;
   text-align: center;
   background: var(--bg-secondary);
-  border-bottom: 2px solid var(--border);
+  border-bottom: 2px solid var(--border-color);
 }
 
 .app-header h1 {
-  font-family: Georgia, serif;
+  font-family: var(--font-heading);
   font-size: 3rem;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
@@ -43,9 +36,9 @@
 .welcome-card {
   background: var(--bg-secondary);
   padding: 2rem 3rem;
-  border-radius: 8px;
-  border: 2px solid var(--border);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border-color);
+  box-shadow: 0 4px 6px var(--shadow-color);
   text-align: center;
   max-width: 500px;
 }

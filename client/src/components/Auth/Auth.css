@@ -1,0 +1,240 @@
+/* Auth Components Styles */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 480px;
+  position: relative;
+  z-index: 2;
+  margin: var(--spacing-xl) 0;
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+}
+
+.auth-header h1 {
+  font-family: var(--font-heading);
+  font-size: var(--font-size-3xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.auth-header p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.auth-submit-btn {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: var(--font-size-lg);
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-md);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-footer {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+  padding-top: var(--spacing-lg);
+  border-top: 1px solid var(--border-color);
+}
+
+.auth-footer p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.auth-link {
+  color: var(--accent-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.auth-link:hover {
+  color: var(--accent-secondary);
+}
+
+/* Form Specific Styles */
+.form-input.error {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.submit-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid var(--error-color);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  text-align: center;
+  font-weight: 600;
+}
+
+.optional {
+  color: var(--text-muted);
+  font-weight: normal;
+  font-size: var(--font-size-sm);
+}
+
+.character-count {
+  text-align: right;
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+/* Loading Animation */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  gap: var(--spacing-md);
+}
+
+.loading-container p {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Vintage Film Background */
+.auth-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  opacity: 0.1;
+  overflow: hidden;
+}
+
+.film-strip {
+  position: absolute;
+  left: -50px;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  transform: rotate(-10deg);
+}
+
+.film-strip::before {
+  content: '';
+  position: absolute;
+  right: -50px;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  background: var(--text-primary);
+  transform: rotate(20deg);
+}
+
+.film-hole {
+  width: 12px;
+  height: 8px;
+  background: var(--bg-primary);
+  border-radius: 2px;
+  margin: 8px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .auth-container {
+    padding: var(--spacing-md);
+  }
+  
+  .auth-card {
+    margin: var(--spacing-lg) 0;
+  }
+  
+  .auth-header h1 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .auth-header p {
+    font-size: var(--font-size-base);
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-container {
+    padding: var(--spacing-sm);
+  }
+  
+  .auth-card {
+    padding: var(--spacing-lg);
+  }
+  
+  .auth-form {
+    gap: var(--spacing-md);
+  }
+  
+  .auth-header {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Dark/Light Theme Specific Adjustments */
+[data-theme="light"] .auth-background {
+  opacity: 0.05;
+}
+
+[data-theme="light"] .film-strip,
+[data-theme="light"] .film-strip::before {
+  background: var(--accent-primary);
+}
+
+/* Focus States */
+.form-input:focus {
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+}
+
+.form-input.error:focus {
+  border-color: var(--error-color);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Animation for form submission */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.submit-error {
+  animation: shake 0.5s ease-in-out;
+}
